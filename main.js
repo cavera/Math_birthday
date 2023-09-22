@@ -8,30 +8,34 @@ form.addEventListener('submit', e => {
   const formData = new FormData(e.target)
 
   const myBirthdate = formData.get('birthday')
-  calculateMathBirthDate(myBirthdate)
+  const { mathDay, mathDate } = calculateMathBirthDate(myBirthdate)
+  showResult(mathDay, mathDate)
 })
 
 function calculateMathBirthDate(birthdate) {
   let currentDate = new Date(birthdate)
   let now = new Date()
 
-  let elapsetMs = now - currentDate
-
   let mathDay
   let mathDate
 
   for (let n = 0; n < 10; n++) {
     const mathBirthday = new Date(currentDate.getTime() + Math.pow(10, n) * 24 * 60 * 60 * 1000)
-    console.log(mathBirthday.toDateString())
 
     mathDay = n
     mathDate = mathBirthday.toDateString()
 
-    if (mathBirthday.getTime() > now.getTime()) {
-      console.log(n, mathBirthday.toDateString())
-      break
-    }
+    console.log(n, mathBirthday.toDateString())
+
+    if (mathBirthday.getTime() > now.getTime()) break
   }
-  mathNumberText.textContent = mathDay
-  mathDateText.textContent = mathDate
+  return {
+    mathDay,
+    mathDate,
+  }
+}
+
+function showResult(day, date) {
+  mathNumberText.textContent = day
+  mathDateText.textContent = date
 }

@@ -83,7 +83,11 @@ button {
   margin: 0;
 }
 
-.math_years {
-  font-size: 3em;
+.math_number {
+  font-size: 4em;
   font-weight: bold;
+}
+
+.math_years {
+  font-size: 1.5rem;
 }
