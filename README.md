@@ -4,7 +4,7 @@
 
 ## To-Do
 
-- [ ] Design and implement the birth date selector that is easy and intuitive with minimal unnecessary clicks, and works on large and small screens (responsive and touch friendly).
+- [x] Design and implement the birth date selector that is easy and intuitive with minimal unnecessary clicks, and works on large and small screens (responsive and touch friendly).
 - [ ] Please include a screenshot or photo of 3 different design ideas (wireframes) that you
       considered.
 - [ ] Design and implement the javascript to calculate and display the next math birthday date

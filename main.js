@@ -10,12 +10,13 @@ const mathDateText = document.querySelector('.math_date')
 const aside = document.querySelector('aside')
 
 const calculatedClass = 'calculated'
+const visibleClass = 'visible'
 
 /*----------  forom  ----------*/
 
 input.addEventListener('input', e => {
   button.setAttribute('disabled', true)
-  app.classList.remove(calculatedClass)
+  hideResult()
 
   console.log(e.target.value)
 
@@ -77,8 +78,16 @@ function showResult(day, date) {
 
   for (let candle = 1; candle <= day; candle++) {
     let candleItem = document.querySelector(`#candle${candle}`)
-    candleItem.classList.add('visible')
+    candleItem.classList.add(visibleClass)
   }
 
   app.classList.add(calculatedClass)
+}
+
+function hideResult() {
+  app.classList.remove(calculatedClass)
+  for (let candle = 1; candle <= 5; candle++) {
+    let candleItem = document.querySelector(`#candle${candle}`)
+    candleItem.classList.remove(visibleClass)
+  }
 }

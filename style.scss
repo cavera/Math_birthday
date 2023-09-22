@@ -1,3 +1,5 @@
+@import 'mixins';
+
 :root {
   font-family: 'Rubik', sans-serif;
   line-height: 1.5;
@@ -14,6 +16,7 @@
   --black: #000;
   --white: #fff;
   --black-20: rgba(0, 0, 0, 0.2);
+  --white-20: rgba(255, 255, 255, 0.2);
 
   color-scheme: dark light;
   color: var(--white);
@@ -38,6 +41,12 @@ body {
   * {
     box-sizing: border-box;
   }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
 }
 
 header {
@@ -47,6 +56,13 @@ header {
   img {
     width: 126px;
   }
+
+  @include desktop {
+    img {
+      width: 100%;
+      max-width: 355px;
+    }
+  }
 }
 
 main {
@@ -55,6 +71,20 @@ main {
   flex-direction: column;
   text-align: center;
   padding: 0 var(--space-lg) var(--space-lg);
+  margin: 0 auto;
+  @include desktop {
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    grid-column: 2 / -1;
+
+    header,
+    h2,
+    section {
+      width: 100%;
+      max-width: 355px;
+    }
+  }
 }
 
 aside {
@@ -63,13 +93,14 @@ aside {
   position: fixed;
   bottom: 0;
   right: 0;
-  transform: translate(30px, 30px) rotate(-16deg);
+  transform: translate(30px, 100px) rotate(-16deg);
+
   svg {
     width: 100%;
     height: 100%;
     transform: translateY(160px);
     transition: all 0.3s ease-out;
-    // transition-delay: 0.2s;
+    transition-delay: 0.2s;
 
     .calculated & {
       transform: translateY(0);
@@ -79,6 +110,23 @@ aside {
       opacity: 0;
       &.visible {
         opacity: 1;
+      }
+    }
+  }
+
+  @include desktop {
+    position: relative;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    background-color: var(--white-20);
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    svg {
+      transform: translateY(30dvh);
+      .calculated & {
+        transform: translateY(20dvh);
       }
     }
   }
@@ -136,6 +184,10 @@ button {
   font-size: 1.3rem;
   font-weight: 500;
   font-family: inherit;
+
+  &:disabled {
+    opacity: 0.4;
+  }
 }
 
 .message {
@@ -194,6 +246,9 @@ button {
 .math_date_text {
   text-align: center;
   font-size: 28px;
+}
+
+@media (width > 480px) {
 }
 
 @media (prefers-color-scheme: light) {
