@@ -18,9 +18,14 @@
   --black-20: rgba(0, 0, 0, 0.2);
   --white-20: rgba(255, 255, 255, 0.2);
 
+  --bgcolor: var(--purple);
+  --ctacolor: var(--yellow);
+  --labelcolor: var(--white);
+  --msgcolor: var(--black);
+
   color-scheme: dark light;
-  color: var(--white);
-  background-color: var(--purple);
+  color: var(--labelcolor);
+  background-color: var(--bgcolor);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -108,6 +113,8 @@ aside {
 
     [id^='candle'] {
       opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      transition-delay: 0.2s;
       &.visible {
         opacity: 1;
       }
@@ -124,7 +131,7 @@ aside {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     svg {
-      transform: translateY(30dvh);
+      transform: translateY(25dvh);
       .calculated & {
         transform: translateY(20dvh);
       }
@@ -175,8 +182,8 @@ input {
 
 button {
   padding: 12px 14px;
-  color: var(--black);
-  background-color: var(--yellow);
+  color: var(--msgcolor);
+  background-color: var(--ctacolor);
   border-radius: var(--space-lg);
   // border: 2px solid --black;
   border: 0;
@@ -192,7 +199,7 @@ button {
 
 .message {
   border-radius: var(--space-lg);
-  background-color: var(--yellow);
+  background-color: var(--ctacolor);
   padding: var(--space-md);
   display: flex;
   flex-direction: column;
@@ -209,7 +216,7 @@ button {
 
   p {
     margin: 0;
-    color: var(--black);
+    color: var(--msgcolor);
     font-weight: 500;
   }
 }
@@ -231,7 +238,7 @@ button {
     color: var(--white);
     text-align: center;
 
-    text-shadow: 4px 4px 0px #000;
+    text-shadow: 4px 4px 0px --black;
     font-size: 155px;
     font-weight: 800;
     line-height: 0.8;
@@ -248,18 +255,11 @@ button {
   font-size: 28px;
 }
 
-@media (width > 480px) {
-}
-
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    --bgcolor: var(--yellow);
+    --ctacolor: var(--purple);
+    --labelcolor: var(--black);
+    --msgcolor: var(--white);
   }
 }
