@@ -1,7 +1,12 @@
+import './style.scss'
+
+const app = document.querySelector('#app')
+
 const form = document.querySelector('form')
-const dateInput = form.querySelector('input')
 const mathNumberText = document.querySelector('.math_number')
 const mathDateText = document.querySelector('.math_date')
+
+const calculatedClass = 'calculated'
 
 form.addEventListener('submit', e => {
   e.preventDefault()
@@ -38,4 +43,5 @@ function calculateMathBirthDate(birthdate) {
 function showResult(day, date) {
   mathNumberText.textContent = day
   mathDateText.textContent = date
+  app.classList.add(calculatedClass)
 }

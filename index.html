@@ -5,33 +5,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Math Birthday</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <script type="module" defer src="/main.js"></script>
 </head>
 
 <body>
   <header>
-    <h1>Math Birthday</h1>
+    <img src="logo.svg" alt="Math Birthday">
   </header>
   <main id="app">
 
+    <h2>Choose your birthdate</h2>
     <section>
-
       <form action="">
-        <label for="birthday">Select your birthday</label>
         <div class="input_group">
+          <label for="birthday">Birthday</label>
           <input type="date" id="birthday" name="birthday">
-          <button type="submit">Calculate →</button>
         </div>
+        <button type="submit">Calculate</button>
       </form>
 
     </section>
 
     <section class="message" id="message">
       <p>Your next math birthday is your</p>
-      <p class="math_number">0</p>
-      <p class="math_years">day old birthday</p>
-      <p>on <span class="math_date">X date</span>!</p>
+      <div class="day_result">
+        <p class="math_number">0</p>
+        <p class="math_years"><span class="days_text">day</span> old birthday</p>
+      </div>
+      <p class="math_date_text">on <span class="math_date">X date</span>!</p>
     </section>
 
   </main>
