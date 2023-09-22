@@ -1,12 +1,28 @@
 import './style.scss'
 
-const app = document.querySelector('#app')
-
+const app = document.querySelector('body')
 const form = document.querySelector('form')
+const input = form.querySelector('input')
+const button = form.querySelector('button')
 const mathNumberText = document.querySelector('.math_number')
 const mathDateText = document.querySelector('.math_date')
 
+const aside = document.querySelector('aside')
+
 const calculatedClass = 'calculated'
+
+/*----------  forom  ----------*/
+
+input.addEventListener('input', e => {
+  button.setAttribute('disabled', true)
+  app.classList.remove(calculatedClass)
+
+  console.log(e.target.value)
+
+  if (e.target.value.length > 0) {
+    button.removeAttribute('disabled')
+  }
+})
 
 form.addEventListener('submit', e => {
   e.preventDefault()
@@ -16,6 +32,8 @@ form.addEventListener('submit', e => {
   const { mathDay, mathDate } = calculateMathBirthDate(myBirthdate)
   showResult(mathDay, mathDate)
 })
+
+/*----------  calculations  ----------*/
 
 function calculateMathBirthDate(birthdate) {
   let currentDate = new Date(birthdate)
@@ -40,8 +58,27 @@ function calculateMathBirthDate(birthdate) {
   }
 }
 
+/*----------  visual response  ----------*/
+console.log(aside)
+window
+  .fetch('./picture.svg')
+  .then(res => res.text())
+  .then(svg => {
+    aside.innerHTML = svg
+  })
+
+  .catch(err => {
+    console.log('Error cargando svg', err)
+  })
+
 function showResult(day, date) {
   mathNumberText.textContent = day
   mathDateText.textContent = date
+
+  for (let candle = 1; candle <= day; candle++) {
+    let candleItem = document.querySelector(`#candle${candle}`)
+    candleItem.classList.add('visible')
+  }
+
   app.classList.add(calculatedClass)
 }

@@ -33,6 +33,11 @@ body {
   gap: var(--space-md);
   width: 100%;
   min-height: 100dvh;
+  overflow: hidden;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 header {
@@ -50,6 +55,33 @@ main {
   flex-direction: column;
   text-align: center;
   padding: 0 var(--space-lg) var(--space-lg);
+}
+
+aside {
+  width: 180px;
+  aspect-ratio: 1 /1;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transform: translate(30px, 30px) rotate(-16deg);
+  svg {
+    width: 100%;
+    height: 100%;
+    transform: translateY(160px);
+    transition: all 0.3s ease-out;
+    // transition-delay: 0.2s;
+
+    .calculated & {
+      transform: translateY(0);
+    }
+
+    [id^='candle'] {
+      opacity: 0;
+      &.visible {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 h1 {
@@ -81,6 +113,7 @@ label {
 }
 
 input {
+  width: 100%;
   color: var(--black);
   background-color: var(--white);
   border-radius: var(--space-lg);
@@ -97,7 +130,8 @@ button {
   color: var(--black);
   background-color: var(--yellow);
   border-radius: var(--space-lg);
-  border: 2px solid --black;
+  // border: 2px solid --black;
+  border: 0;
   box-shadow: 4px 4px 0px 0px var(--black);
   font-size: 1.3rem;
   font-weight: 500;
