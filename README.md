@@ -5,11 +5,13 @@
 ## To-Do
 
 - [x] Design and implement the birth date selector that is easy and intuitive with minimal unnecessary clicks, and works on large and small screens (responsive and touch friendly).
-- [ ] Please include a screenshot or photo of 3 different design ideas (wireframes) that you
-      considered.
-- [ ] Design and implement the javascript to calculate and display the next math birthday date
+- [ ] Please include a screenshot or photo of 3 different design ideas (wireframes) that you considered.
+
+![Proposal 1](./snapshoots/prop1.webp)
+
+- [x] Design and implement the javascript to calculate and display the next math birthday date
       message below the date selector.
-- [ ] Please remember, the site should be a single page application, with a link to view it live hosted on something like jsfiddle or github.io or wherever,and a link to the source code
+- [x] Please remember, the site should be a single page application, with a link to view it live hosted on something like jsfiddle or github.io or wherever,and a link to the source code
 
 - Feel free to use any libraries or frameworks for the birth date picker or date calculations or anything else you want.
 

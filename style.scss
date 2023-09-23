@@ -191,6 +191,12 @@ button {
   font-size: 1.3rem;
   font-weight: 500;
   font-family: inherit;
+  transform-origin: 50% 50%;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &:disabled {
     opacity: 0.4;
@@ -262,4 +268,19 @@ button {
     --labelcolor: var(--black);
     --msgcolor: var(--white);
   }
+}
+
+.github_link {
+  position: fixed;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  display: block;
+  background-color: var(--black);
+  background-image: url('./github.svg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  width: 48px;
+  aspect-ratio: 1 / 1;
+  font-size: 0;
 }
