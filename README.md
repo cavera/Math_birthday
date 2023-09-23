@@ -5,12 +5,13 @@
 ## To-Do
 
 - [x] Design and implement the birth date selector that is easy and intuitive with minimal unnecessary clicks, and works on large and small screens (responsive and touch friendly).
-- [ ] Please include a screenshot or photo of 3 different design ideas (wireframes) that you considered.
+- [x] Please include a screenshot or photo of 3 different design ideas (wireframes) that you considered.
 
-![Proposal 1](./snapshoots/prop1.webp)
+![Proposal 1](https://raw.githubusercontent.com/cavera/Math_birthday/main/public/snapshoots/prop1.webp 'Proposal 1')
+![Proposal 2](https://raw.githubusercontent.com/cavera/Math_birthday/main/public/snapshoots/prop2.webp 'Proposal 2')
+![Proposal 3](https://raw.githubusercontent.com/cavera/Math_birthday/main/public/snapshoots/prop3.webp 'Proposal 3')
 
-- [x] Design and implement the javascript to calculate and display the next math birthday date
-      message below the date selector.
+- [x] Design and implement the javascript to calculate and display the next math birthday date message below the date selector.
 - [x] Please remember, the site should be a single page application, with a link to view it live hosted on something like jsfiddle or github.io or wherever,and a link to the source code
 
 - Feel free to use any libraries or frameworks for the birth date picker or date calculations or anything else you want.
